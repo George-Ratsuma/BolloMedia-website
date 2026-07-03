@@ -12,7 +12,7 @@ export default function Home() {
   const featuredWork = [
     {
       img: '/assets/gallery/gallery1.jpg',
-      title: 'Short Film — "Daylight"',
+      title: 'Short Film — "The KeyHolder"',
       desc: 'A short narrative about memory.'
     },
     {
@@ -40,9 +40,9 @@ export default function Home() {
 
       <main style={{ padding: '48px 0' }}>
         <div className="container-max">
-          <h2 className="h2 font-display">Featured Work</h2>
+          <h2 className="h2 font-display">Our latest production</h2>
           <p className="text-muted" style={{ marginTop: 8 }}>
-            Recent projects from Bollo Media.
+            Recent project from Bollo Media.
           </p>
 
           <div className="grid-3" style={{ marginTop: 20 }}>
