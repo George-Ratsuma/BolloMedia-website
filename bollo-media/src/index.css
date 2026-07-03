@@ -61,13 +61,64 @@ body {
 
 /* buttons */
 .btn-accent {
-  display:inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
   background: var(--accent);
   color: white;
-  padding:10px 16px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:600;
+
+  padding: 14px 28px;
+
+  border: none;
+  border-radius: 10px;
+
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+
+  cursor: pointer;
+
+  transition: all .3s ease;
+}
+
+.btn-accent:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+
+.btn-outline {
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 28px;
+
+  border: 2px solid var(--accent);
+
+  background: transparent;
+
+  color: var(--accent);
+
+  border-radius: 10px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all .3s ease;
+
+}
+
+.btn-outline:hover{
+
+  background: var(--accent);
+
+  color:white;
+
 }
 
 /* small helpers */
