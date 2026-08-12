@@ -4,32 +4,19 @@ import { motion } from 'framer-motion'
 import Hero from '../components/Hero'
 
 const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
+  hidden: { opacity: 0, y: 25 },
   visible: { opacity: 1, y: 0 }
 }
 
 export default function Home() {
-  const featuredWork = [
-    {
-      img: '/assets/gallery/feat1.jpg',
-      title: 'Short Film - "The KeyHolder"',
-      desc: 'A short narrative about culture.'
-    },
-    // {
-    //   img: '/assets/gallery/feat2.jpg',
-    //   title: 'Short Film - "The KeyHolder"',
-    //   desc: 'A short narrative about culture.'
-    // },
-    // {
-    //   img: '/assets/gallery/gallery3.jpg',
-    //   title: 'Music Video — "Skyline"',
-    //   desc: 'Cinematic music video with sweeping visuals.'
-    // }
-  ]
 
   return (
     <div>
-      {/* Animate Hero */}
+
+      {/* =========================
+          HERO
+      ========================= */}
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -38,312 +25,459 @@ export default function Home() {
         <Hero />
       </motion.div>
 
-      <main style={{ padding: '48px 0' }}>
-        <div className="container-max">
-          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
-  <p
-    style={{
-      letterSpacing: "4px",
-      textTransform: "uppercase",
-      color: "#b88a44",
-      fontWeight: "600",
-      marginBottom: "12px",
-    }}
-  >
-    Our Latest Production
-  </p>
 
-  <h2 className="h2 font-display">
-    THE KEYHOLDER
-  </h2>
+      <main>
 
-  <p
-    className="text-muted"
-    style={{
-      maxWidth: "700px",
-      margin: "12px auto 0",
-    }}
-  >
-    A heartfelt short film exploring the beautiful culture of the Limpopo Pedi Tribe.
-  </p>
-</div>
+        {/* =========================
+            LATEST PRODUCTION
+        ========================= */}
 
-         <motion.div
-  variants={cardVariants}
-  initial="hidden"
-  animate="visible"
-  transition={{ duration: 0.7 }}
->
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gap: "40px",
-      alignItems: "center",
-      marginTop: "40px",
-      background: "#fff",
-      borderRadius: "20px",
-      border: "2px",
-      borderColor: "#d5b410" ,
-      padding: "30px",
-      boxShadow: "0 20px 40px rgba(0,0,0,0.08)"
-    }}
-  >
-    {/* Left Side */}
-    <img
-      src="/assets/gallery/feat1.jpg"
-      alt="Daylight"
-      style={{
-        width: "100%",
-        borderRadius: "16px",
-        objectFit: "cover"
-      }}
-    />
+        <section
+          style={{
+            padding: "100px 0",
+            background: "#fafafa"
+          }}
+        >
 
-    {/* Right Side */}
-    <div>
+          <div className="container-max">
 
-      <h2 className="font-display">
-        THE KEYHOLDER
-      </h2>
+            <div
+              style={{
+                marginBottom: "50px"
+              }}
+            >
 
-      <p
-        className="text-muted"
-        style={{ marginTop: "20px", lineHeight: 1.8 }}
-      >
-           A heartfelt short film exploring the beautiful culture of the Limpopo Pedi Tribe.
- 
-      </p>
+              <p
+                style={{
+                  letterSpacing: "4px",
+                  textTransform: "uppercase",
+                  color: "var(--accent)",
+                  fontWeight: "600",
+                  fontSize: "13px",
+                  marginBottom: "12px"
+                }}
+              >
+                Our Latest Production
+              </p>
 
-      <div style={{ marginTop: "30px" }}>
+              <h2
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                  margin: 0,
+                  lineHeight: 1
+                }}
+              >
+                The Keyholder
+              </h2>
 
-        <p><strong>Released:</strong> 2025</p>
+            </div>
 
-        <p><strong>Genre:</strong> Drama</p>
 
-        <p><strong>Duration:</strong> 40 Minutes</p>
+            <motion.div
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              style={{
+                display: "grid",
+                gridTemplateColumns: "1.15fr 0.85fr",
+                gap: "60px",
+                alignItems: "center"
+              }}
+            >
 
-      </div>
+              {/* FILM IMAGE */}
 
-      <div
-        style={{
-          display: "flex",
-          gap: "16px",
-          marginTop: "35px"
-        }}
-      >
+              <div>
 
-        <button className="btn-accent">
-          Watch Trailer
-        </button>
+                <img
+                  src="/assets/gallery/feat1.jpg"
+                  alt="The Keyholder"
+                  style={{
+                    width: "100%",
+                    display: "block",
+                    borderRadius: "4px"
+                  }}
+                />
 
-        <button className="btn-accent btn-outline">
-          Behind The Scenes
-        </button>
+              </div>
 
-      </div>
 
-    </div>
+              {/* FILM INFORMATION */}
 
-  </div>
-</motion.div>
+              <div>
 
-<section
-  style={{
-    padding: "100px 0",
-    textAlign: "center",
-    maxWidth: "850px",
-    margin: "0 auto"
-  }}
->
+                <p
+                  className="text-muted"
+                  style={{
+                    fontSize: "17px",
+                    lineHeight: 1.8,
+                    marginBottom: "30px"
+                  }}
+                >
+                  A heartfelt short film exploring the beautiful
+                  culture of the Limpopo Pedi Tribe.
+                </p>
 
-  <p
-    style={{
-      color: "var(--accent)",
-      letterSpacing: "3px",
-      textTransform: "uppercase",
-      fontWeight: 600
-    }}
-  >
-    About Bollo Media
-  </p>
 
-  <h2
-    className="font-display"
-    style={{
-      fontSize: "3rem",
-      marginTop: "15px",
-      marginBottom: "30px"
-    }}
-  >
-    Bold Stories.<br />
-    Authentic African Voices.
-  </h2>
+                <div
+                  style={{
+                    borderTop: "1px solid #ddd",
+                    borderBottom: "1px solid #ddd",
+                    padding: "20px 0",
+                    marginBottom: "30px"
+                  }}
+                >
 
-  <p
-    className="text-muted"
-    style={{
-      lineHeight: 1.9,
-      fontSize: "1.1rem"
-    }}
-  >
-    Bollo Media is a South African film and media production company
-    dedicated to creating stories that reflect our culture,
-    communities and lived experiences.
+                  <p style={{ margin: "7px 0" }}>
+                    <strong>Released:</strong> 2025
+                  </p>
 
-    <br /><br />
+                  <p style={{ margin: "7px 0" }}>
+                    <strong>Genre:</strong> Drama
+                  </p>
 
-    Through film, documentaries and digital media, we produce
-    work that entertains, inspires and sparks meaningful
-    conversations.
-  </p>
+                  <p style={{ margin: "7px 0" }}>
+                    <strong>Duration:</strong> 40 Minutes
+                  </p>
 
-</section>
+                </div>
 
-<section
-  style={{
-    paddingBottom: "100px"
-  }}
->
 
-  <div
-    style={{
-      textAlign: "center",
-      marginBottom: "60px"
-    }}
-  >
+                <div
+                  style={{
+                    display: "flex",
+                    gap: "14px",
+                    flexWrap: "wrap"
+                  }}
+                >
 
-    <p
-      style={{
-        color: "var(--accent)",
-        letterSpacing: "3px",
-        textTransform: "uppercase",
-        fontWeight: 600
-      }}
-    >
-      Our Expertise
-    </p>
+                  <button className="btn-accent">
+                    Watch Trailer
+                  </button>
 
-    <h2
-      className="font-display"
-      style={{
-        fontSize: "2.8rem",
-        marginTop: "15px"
-      }}
-    >
-      How We Bring Stories To Life
-    </h2>
+                  <button className="btn-accent btn-outline">
+                    Behind The Scenes
+                  </button>
 
-  </div>
+                </div>
 
-  <div
-    style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(2,1fr)",
-      gap: "30px"
-    }}
-  >
+              </div>
 
-    <div className="card" style={{ padding: "35px", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}>
-      <h3> Film & TV Production</h3>
+            </motion.div>
 
-      <p className="text-muted">
-        From development to post-production, we transform ideas into cinematic experiences.
-      </p>
-    </div>
+          </div>
 
-    <div className="card" style={{ padding: "35px", boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}>
-      <h3> Script Development</h3>
+        </section>
 
-      <p className="text-muted">
-        Crafting compelling stories that connect with audiences through authentic storytelling.
-      </p>
-    </div>
 
-    <div className="card" style={{ padding: "35px" , boxShadow: "0 20px 40px rgba(0,0,0,0.08)"}}>
-      <h3> Documentary Production</h3>
+        {/* =========================
+            ABOUT BOLLO
+        ========================= */}
 
-      <p className="text-muted">
-        Capturing real stories that educate, inspire and preserve lived experiences.
-      </p>
-    </div>
+        <section
+          style={{
+            padding: "120px 0"
+          }}
+        >
 
-    <div className="card" style={{ padding: "35px" , boxShadow: "0 20px 40px rgba(0,0,0,0.08)"}}>
-      <h3> Digital Media</h3>
+          <div
+            className="container-max"
+            style={{
+              display: "grid",
+              gridTemplateColumns: "0.9fr 1.1fr",
+              gap: "100px",
+              alignItems: "center"
+            }}
+          >
 
-      <p className="text-muted">
-        Creating engaging content for brands, organisations and digital platforms.
-      </p>
-    </div>
+            {/* HEADING */}
 
-  </div>
+            <div>
 
-</section>
-        </div>
+              <p
+                style={{
+                  color: "var(--accent)",
+                  letterSpacing: "3px",
+                  textTransform: "uppercase",
+                  fontWeight: "600",
+                  fontSize: "13px"
+                }}
+              >
+                About Bollo Media
+              </p>
+
+              <h2
+                className="font-display"
+                style={{
+                  fontSize: "clamp(2.8rem, 5vw, 4.5rem)",
+                  lineHeight: 1.05,
+                  margin: "18px 0 0"
+                }}
+              >
+                Bold Stories.
+                <br />
+                Authentic African
+                <br />
+                Voices.
+              </h2>
+
+            </div>
+
+
+            {/* DESCRIPTION */}
+
+            <div>
+
+              <p
+                style={{
+                  fontSize: "20px",
+                  lineHeight: 1.8,
+                  marginTop: 0
+                }}
+              >
+                Bollo Media is a South African film and media
+                production company dedicated to creating bold,
+                authentic African stories.
+              </p>
+
+              <p
+                className="text-muted"
+                style={{
+                  fontSize: "16px",
+                  lineHeight: 1.9
+                }}
+              >
+                We develop and produce films, documentaries and
+                digital content that reflects our culture,
+                communities and lived experiences.
+              </p>
+
+              <p
+                className="text-muted"
+                style={{
+                  fontSize: "16px",
+                  lineHeight: 1.9
+                }}
+              >
+                Our work aims to entertain, inspire and spark
+                meaningful conversations while contributing to the
+                growth of the South African film industry.
+              </p>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* =========================
+            WHAT WE DO
+        ========================= */}
+
+        <section
+          style={{
+            padding: "100px 0",
+            background: "#fafafa"
+          }}
+        >
+
+          <div className="container-max">
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                alignItems: "flex-end",
+                gap: "30px",
+                marginBottom: "60px"
+              }}
+            >
+
+              <div>
+
+                <p
+                  style={{
+                    color: "var(--accent)",
+                    letterSpacing: "3px",
+                    textTransform: "uppercase",
+                    fontWeight: "600",
+                    fontSize: "13px"
+                  }}
+                >
+                  What We Do
+                </p>
+
+                <h2
+                  className="font-display"
+                  style={{
+                    fontSize: "clamp(2.5rem, 5vw, 4rem)",
+                    margin: "15px 0 0",
+                    lineHeight: 1
+                  }}
+                >
+                  From Idea
+                  <br />
+                  To Screen.
+                </h2>
+
+              </div>
+
+              <p
+                className="text-muted"
+                style={{
+                  maxWidth: "420px",
+                  margin: 0,
+                  lineHeight: 1.8
+                }}
+              >
+                From developing the first idea to bringing a
+                finished production to audiences, we help turn
+                stories into meaningful visual experiences.
+              </p>
+
+            </div>
+
+
+            {/* SERVICES */}
+
+            <div
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(2, 1fr)",
+                borderTop: "1px solid #ddd"
+              }}
+            >
+
+              <div
+                style={{
+                  padding: "35px 30px 35px 0",
+                  borderBottom: "1px solid #ddd"
+                }}
+              >
+
+                <h3 className="font-display">
+                  01. Film & TV Production
+                </h3>
+
+                <p className="text-muted">
+                  From development through to post-production,
+                  we bring stories to life through film and
+                  television.
+                </p>
+
+              </div>
+
+
+              <div
+                style={{
+                  padding: "35px 0 35px 30px",
+                  borderBottom: "1px solid #ddd",
+                  borderLeft: "1px solid #ddd"
+                }}
+              >
+
+                <h3 className="font-display">
+                  02. Script Development
+                </h3>
+
+                <p className="text-muted">
+                  Developing compelling stories and working
+                  with creators to shape ideas into strong
+                  narratives.
+                </p>
+
+              </div>
+
+
+              <div
+                style={{
+                  padding: "35px 30px 35px 0"
+                }}
+              >
+
+                <h3 className="font-display">
+                  03. Documentary Production
+                </h3>
+
+                <p className="text-muted">
+                  Capturing real stories, people and experiences
+                  that educate, inspire and preserve our communities.
+                </p>
+
+              </div>
+
+
+              <div
+                style={{
+                  padding: "35px 0 35px 30px",
+                  borderLeft: "1px solid #ddd"
+                }}
+              >
+
+                <h3 className="font-display">
+                  04. Digital Media
+                </h3>
+
+                <p className="text-muted">
+                  Creating engaging digital content for brands,
+                  organisations and audiences across modern
+                  platforms.
+                </p>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        {/* =========================
+            CLOSING STATEMENT
+        ========================= */}
+
+        <section
+          style={{
+            padding: "120px 24px",
+            textAlign: "center"
+          }}
+        >
+
+          <p
+            style={{
+              color: "var(--accent)",
+              letterSpacing: "3px",
+              textTransform: "uppercase",
+              fontWeight: "600",
+              fontSize: "12px"
+            }}
+          >
+            Bollo Media
+          </p>
+
+          <h2
+            className="font-display"
+            style={{
+              fontSize: "clamp(2.5rem, 5vw, 4.5rem)",
+              maxWidth: "800px",
+              margin: "20px auto",
+              lineHeight: 1.1
+            }}
+          >
+            Stories that reflect
+            <br />
+            who we are.
+          </h2>
+
+        </section>
+
       </main>
+
     </div>
   )
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // src/pages/Home.jsx
-// import React from 'react'
-// import Hero from '../components/Hero'
-
-// export default function Home(){
-//   return (
-//     <div>
-//       <Hero />
-//       <main style={{padding:'48px 0'}}>
-//         <div className="container-max">
-//           <h2 className="h2 font-display">Featured Work</h2>
-//           <p className="text-muted" style={{marginTop:8}}>Recent projects from Bollo Media.</p>
-
-//           <div className="grid-3" style={{marginTop:20}}>
-//             <div className="card">
-//               <img className="responsive" src="/assets/gallery/gallery1.jpg" alt="project 1" />
-//               <div style={{padding:16}}>
-//                 <h3 style={{margin:0}}>Short Film — "Daylight"</h3>
-//                 <p className="text-muted" style={{marginTop:8}}>A short narrative about memory.</p>
-//               </div>
-//             </div>
-
-//             <div className="card">
-//               <img className="responsive" src="/assets/gallery/gallery2.jpg" alt="project 2" />
-//               <div style={{padding:16}}>
-//                 <h3 style={{margin:0}}>Commercial — "LuxTea"</h3>
-//                 <p className="text-muted" style={{marginTop:8}}>Lifestyle commercial for a premium tea brand.</p>
-//               </div>
-//             </div>
-
-//             <div className="card">
-//               <img className="responsive" src="/assets/gallery/gallery3.jpg" alt="project 3" />
-//               <div style={{padding:16}}>
-//                 <h3 style={{margin:0}}>Music Video — "Skyline"</h3>
-//                 <p className="text-muted" style={{marginTop:8}}>Cinematic music video with sweeping visuals.</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </main>
-//     </div>
-//   )
-// }

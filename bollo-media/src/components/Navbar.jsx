@@ -26,9 +26,7 @@ export default function Navbar() {
           <NavLink to="/production" className={({ isActive }) => (isActive ? "active" : "")}>
             Production
           </NavLink>
-          <NavLink to="/gallery" className={({ isActive }) => (isActive ? "active" : "")}>
-            Gallery
-          </NavLink>
+         
           <NavLink to="/contact" className={({ isActive }) => (isActive ? "active" : "")}>
             Contact
           </NavLink>

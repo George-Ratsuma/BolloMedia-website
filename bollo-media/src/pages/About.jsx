@@ -7,244 +7,593 @@ export default function About() {
     <div className="about-page">
       <style>{`
         .about-page {
-          font-family: 'Poppins', sans-serif;
-          color: #222;
-          background-color: #fafafa;
+          font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+          color: var(--text);
+          background: #ffffff;
           line-height: 1.6;
         }
 
-        .hero {
+        .about-page h1,
+        .about-page h2,
+        .about-page h3 {
+          font-family: "Playfair Display", serif;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .about-hero {
           background: url('/assets/gallery/gallery2.jpg') center/cover no-repeat;
           color: white;
           text-align: center;
           padding: 160px 20px;
           position: relative;
         }
-        .hero::after {
+
+        .about-hero::after {
           content: '';
           position: absolute;
           inset: 0;
-          background: rgba(0,0,0,0.6);
+          background: rgba(0, 0, 0, 0.58);
         }
-        .hero-content {
+
+        .about-hero-content {
           position: relative;
           z-index: 2;
           max-width: 800px;
           margin: 0 auto;
         }
-        .hero h1 {
+
+        .about-hero h1 {
           font-size: 48px;
-          margin-bottom: 16px;
+          margin: 0 0 16px;
           text-transform: uppercase;
           letter-spacing: 2px;
         }
-        .hero p {
+
+        .about-hero p {
           font-size: 18px;
-          opacity: 0.9;
+          opacity: 0.92;
+          margin: 0;
         }
 
-        .section {
-          padding: 80px 20px;
+        /* =========================
+           GENERAL SECTIONS
+        ========================= */
+
+        .about-section {
           max-width: 1100px;
           margin: 0 auto;
-          text-align: center;
-        }
-        .section h2 {
-          font-size: 36px;
-          margin-bottom: 20px;
-          color: #111;
-        }
-        .section p {
-          font-size: 17px;
-          color: #555;
-          margin-bottom: 40px;
+          padding: 100px 24px;
         }
 
-        /* STORY SECTION */
-        .story {
-          display: flex;
-          flex-wrap: wrap;
+        .section-label {
+          color: var(--accent);
+          letter-spacing: 3px;
+          text-transform: uppercase;
+          font-size: 13px;
+          font-weight: 600;
+          margin-bottom: 12px;
+        }
+
+        .section-heading {
+          font-size: 42px;
+          line-height: 1.15;
+          margin: 0 0 28px;
+        }
+
+        /* =========================
+           OUR STORY
+        ========================= */
+
+        .story-layout {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 70px;
           align-items: center;
-          gap: 40px;
+        }
+
+        .story-image {
+          width: 100%;
+          height: 560px;
+          object-fit: cover;
+          border-radius: 14px;
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+        }
+
+        .story-text {
           text-align: left;
         }
-        .story img {
-          flex: 1 1 400px;
-          width: 100%;
-          border-radius: 10px;
-          box-shadow: 0 6px 16px rgba(0,0,0,0.1);
-        }
-        .story-text {
-          flex: 1 1 400px;
+
+        .story-text p {
+          color: var(--muted);
+          font-size: 17px;
+          line-height: 1.9;
+          margin-bottom: 24px;
         }
 
-        /* SERVICES GRID */
+        /* =========================
+           WHAT WE DO
+        ========================= */
+
+        .services-section {
+          background: var(--soft);
+          max-width: none;
+        }
+
+        .services-inner {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 100px 24px;
+        }
+
+        .services-heading {
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto 55px;
+        }
+
+        .services-heading p {
+          color: var(--muted);
+          font-size: 17px;
+        }
+
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-          gap: 30px;
-          margin-top: 40px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 25px;
         }
+
         .service-card {
-          background: white;
-          border-radius: 10px;
-          padding: 30px 20px;
-          box-shadow: 0 6px 14px rgba(0,0,0,0.08);
-          transition: all 0.3s ease;
+          background: #ffffff;
+          border: 1px solid #eeeeee;
+          border-radius: 14px;
+          padding: 35px;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .service-card:hover {
           transform: translateY(-6px);
-          box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
         }
+
+        .service-number {
+          color: var(--accent);
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 2px;
+        }
+
         .service-card h3 {
-          color: #111;
-          margin-bottom: 10px;
-          font-size: 20px;
+          font-size: 23px;
+          margin: 15px 0 12px;
         }
 
-        /* TEAM PREVIEW */
-        .team-preview {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 30px;
-          margin-top: 40px;
+        .service-card p {
+          color: var(--muted);
+          margin: 0;
+          line-height: 1.8;
         }
-        .team-member {
-          text-align: center;
+
+        /* =========================
+           PHILOSOPHY
+        ========================= */
+
+        .philosophy-section {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 70px;
+          align-items: center;
         }
-        .team-member img {
-          width: 160px;
-          height: 160px;
+
+        .philosophy-image {
+          width: 100%;
+          height: 470px;
           object-fit: cover;
-          border-radius: 50%;
-          box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-          margin-bottom: 10px;
+          border-radius: 14px;
+          box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
         }
 
-        /* CTA SECTION */
-        .cta {
-          background: #111;
-          color: white;
-          padding: 100px 20px;
-          text-align: center;
+        .philosophy-text {
+          text-align: left;
         }
-        .cta h2 {
-          font-size: 34px;
+
+        .philosophy-quote {
+          font-family: "Playfair Display", serif;
+          font-size: 30px;
+          line-height: 1.35;
+          margin: 0 0 30px;
+          color: var(--text);
+        }
+
+        .philosophy-text p {
+          color: var(--muted);
+          font-size: 16px;
+          line-height: 1.85;
           margin-bottom: 20px;
         }
+
+        /* =========================
+           MISSION
+        ========================= */
+
+        .mission-section {
+          background: var(--soft);
+          text-align: center;
+          max-width: none;
+        }
+
+        .mission-inner {
+          max-width: 850px;
+          margin: 0 auto;
+          padding: 110px 24px;
+        }
+
+        .mission-inner h2 {
+          font-size: 44px;
+          margin: 0 0 30px;
+        }
+
+        .mission-main {
+          font-family: "Playfair Display", serif;
+          font-size: 25px;
+          line-height: 1.6;
+          color: var(--text);
+          margin-bottom: 25px;
+        }
+
+        .mission-support {
+          color: var(--muted);
+          font-size: 17px;
+          line-height: 1.9;
+        }
+
+        /* =========================
+           CTA
+        ========================= */
+
+        .cta {
+          padding: 110px 24px;
+          text-align: center;
+          background: #ffffff;
+        }
+
+        .cta h2 {
+          font-size: 38px;
+          margin: 0 0 25px;
+        }
+
+        .cta p {
+          color: var(--muted);
+          margin-bottom: 30px;
+        }
+
         .cta a {
           text-decoration: none;
         }
-        .cta button {
-          padding: 12px 28px;
-          font-size: 16px;
-          border: none;
-          border-radius: 6px;
-          cursor: pointer;
-          background: #f8b400;
-          color: #111;
-          font-weight: bold;
-          transition: background 0.3s;
-        }
-        .cta button:hover {
-          background: #ffcc33;
-        }
+
+        /* =========================
+           MOBILE
+        ========================= */
 
         @media (max-width: 768px) {
-          .hero h1 { font-size: 36px; }
-          .story { flex-direction: column; }
+
+          .about-hero {
+            padding: 120px 20px;
+          }
+
+          .about-hero h1 {
+            font-size: 36px;
+          }
+
+          .about-hero p {
+            font-size: 16px;
+          }
+
+          .about-section {
+            padding: 70px 20px;
+          }
+
+          .section-heading {
+            font-size: 34px;
+          }
+
+          .story-layout,
+          .philosophy-section {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+
+          .story-image {
+            height: 400px;
+          }
+
+          .philosophy-image {
+            height: 350px;
+          }
+
+          .services-inner {
+            padding: 70px 20px;
+          }
+
+          .services-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .mission-inner {
+            padding: 80px 20px;
+          }
+
+          .mission-inner h2 {
+            font-size: 36px;
+          }
+
+          .mission-main {
+            font-size: 21px;
+          }
+
+          .cta {
+            padding: 80px 20px;
+          }
+
+          .cta h2 {
+            font-size: 32px;
+          }
         }
       `}</style>
 
-      {/* HERO SECTION */}
-      <section className="hero">
-        <div className="hero-content">
+      {/* HERO */}
+
+      <section className="about-hero">
+        <div className="about-hero-content">
           <h1>About Bollo Media</h1>
+
           <p>
-            Telling stories that move people — through film, photography, and creative production.
+            Telling bold, authentic African stories through film,
+            documentaries and digital media.
           </p>
         </div>
       </section>
 
       {/* OUR STORY */}
-      <section className="section">
-        <h2>Our Story</h2>
-        <div className="story">
+
+      <section className="about-section">
+        <div className="story-layout">
+
+          <img
+            className="story-image"
+            src="/assets/gallery/gallery1.jpg"
+            alt="Bollo Media production"
+          />
+
           <div className="story-text">
-            <p>
-              Bollo Media was founded with a single vision — to turn moments into motion.
-              What began as a passion project among young storytellers has evolved into a full-service
-              production company, crafting narratives that inspire, educate, and connect.
+
+            <p className="section-label">
+              Our Story
             </p>
+
+            <h2 className="section-heading">
+              Stories rooted in culture, people and experience.
+            </h2>
+
             <p>
-              From local communities to commercial clients, we capture authenticity — because every frame,
-              every sound, and every detail matters.
+              Bollo Media is a South African film and media production
+              company focused on creating bold, authentic African stories
+              that entertain, inspire and spark meaningful conversations.
             </p>
+
+            <p>
+              We believe that some of the most powerful stories come from
+              the people, cultures and communities around us. Our work
+              reflects African culture and lived experiences, bringing
+              stories to audiences through film, documentary, commercial
+              and digital content.
+            </p>
+
+            <p>
+              Founded by Debora Ratsuma, Bollo Media is committed to
+              developing meaningful and engaging work while creating space
+              for authentic African voices and emerging talent.
+            </p>
+
           </div>
-          <img src="/assets/gallery/gallery1.jpg" alt="Our Story" />
+
         </div>
       </section>
 
-      {/* SERVICES */}
-      <section className="section">
-        <h2>What We Do</h2>
-        <div className="services-grid">
-          <div className="service-card">
-            <h3>Film Production</h3>
-            <p>From script to screen — we bring stories to life through cinematic visuals and emotion-driven direction.</p>
+      {/* WHAT WE DO */}
+
+      <section className="services-section">
+        <div className="services-inner">
+
+          <div className="services-heading">
+
+            <p className="section-label">
+              What We Do
+            </p>
+
+            <h2 className="section-heading">
+              From an idea to a story worth telling.
+            </h2>
+
+            <p>
+              We work across film, documentary, commercial and digital
+              production to develop stories that connect with audiences.
+            </p>
+
           </div>
-          <div className="service-card">
-            <h3>Photography</h3>
-            <p>We capture moments, products, and people with authenticity and artistic precision.</p>
+
+          <div className="services-grid">
+
+            <div className="service-card">
+              <span className="service-number">01</span>
+
+              <h3>Film & TV Production</h3>
+
+              <p>
+                From development through post-production, we bring stories
+                to life through thoughtful production, strong visual
+                storytelling and authentic creative direction.
+              </p>
+            </div>
+
+            <div className="service-card">
+              <span className="service-number">02</span>
+
+              <h3>Script Development</h3>
+
+              <p>
+                We develop and refine stories from early concepts to
+                screen-ready scripts, helping shape narratives that connect
+                with audiences.
+              </p>
+            </div>
+
+            <div className="service-card">
+              <span className="service-number">03</span>
+
+              <h3>Documentary Production</h3>
+
+              <p>
+                We create documentaries that explore real people,
+                communities, cultures and experiences, giving authentic
+                stories a platform.
+              </p>
+            </div>
+
+            <div className="service-card">
+              <span className="service-number">04</span>
+
+              <h3>Commercial & Branded Content</h3>
+
+              <p>
+                We create engaging visual content for brands and
+                organisations, combining storytelling with creative
+                production to communicate ideas effectively.
+              </p>
+            </div>
+
+            <div className="service-card">
+              <span className="service-number">05</span>
+
+              <h3>Creative Storytelling</h3>
+
+              <p>
+                We develop stories and creative concepts that reflect
+                culture, identity and lived experiences while connecting
+                with audiences in meaningful ways.
+              </p>
+            </div>
+
+            <div className="service-card">
+              <span className="service-number">06</span>
+
+              <h3>Digital Media Production</h3>
+
+              <p>
+                We produce engaging digital content designed for today's
+                audiences, helping stories and ideas reach people across
+                modern media platforms.
+              </p>
+            </div>
+
           </div>
-          <div className="service-card">
-            <h3>Audio Production</h3>
-            <p>Sound design, scoring, and voiceovers that elevate storytelling and brand impact.</p>
-          </div>
-          <div className="service-card">
-            <h3>Creative Direction</h3>
-            <p>From concept development to execution — we guide every project with vision and style.</p>
-          </div>
+
         </div>
       </section>
 
-      {/* TEAM PREVIEW */}
-      <section className="section">
-        <h2>Meet The Team</h2>
-        <div className="team-preview">
-          <div className="team-member">
-            <img src="/assets/team/team1.jpg" alt="Team Member 1" />
-            <h4>Bongani — Director</h4>
+      {/* OUR PHILOSOPHY */}
+
+      <section className="about-section">
+        <div className="philosophy-section">
+
+          <div className="philosophy-text">
+
+            <p className="section-label">
+              Our Philosophy
+            </p>
+
+            <h2 className="section-heading">
+              Every story carries something worth sharing.
+            </h2>
+
+            <p className="philosophy-quote">
+              We believe storytelling has the power to connect people,
+              preserve culture and create meaningful conversations.
+            </p>
+
+            <p>
+              Every story carries something worth sharing. Whether it comes
+              from an individual, a community, a brand or a lived experience,
+              we aim to tell it with authenticity, creativity and purpose.
+            </p>
+
+            <p>
+              Our work is rooted in the belief that African stories deserve
+              to be told from authentic perspectives and shared with audiences
+              both locally and beyond.
+            </p>
+
           </div>
-          <div className="team-member">
-            <img src="/assets/team/team2.jpg" alt="Team Member 2" />
-            <h4>Lerato — Cinematographer</h4>
-          </div>
-          <div className="team-member">
-            <img src="/assets/team/team3.jpg" alt="Team Member 3" />
-            <h4>Thabo — Editor</h4>
-          </div>
+
+          <img
+            className="philosophy-image"
+            src="/assets/gallery/gallery2.jpg"
+            alt="Bollo Media storytelling"
+          />
+
         </div>
       </section>
 
-      {/* PHILOSOPHY */}
-      <section className="section">
-        <h2>Our Philosophy</h2>
-        <p>
-          We believe creativity builds bridges — between people, cultures, and generations.
-          Every project is more than a production; it’s a chance to inspire and reflect
-          the spirit of our communities.
-        </p>
+      {/* OUR MISSION */}
+
+      <section className="mission-section">
+        <div className="mission-inner">
+
+          <p className="section-label">
+            Our Mission
+          </p>
+
+          <h2>
+            Stories that matter. Voices that deserve to be heard.
+          </h2>
+
+          <p className="mission-main">
+            Our mission is to tell impactful stories, nurture emerging
+            talent, and contribute to the growth of the South African
+            film industry.
+          </p>
+
+          <p className="mission-support">
+            We aim to create opportunities for new voices while producing
+            work that reflects the diversity, creativity and experiences
+            of South African communities.
+          </p>
+
+        </div>
       </section>
 
       {/* CTA */}
+
       <section className="cta">
-        <h2>Ready to bring your story to life?</h2>
+
+        <h2>
+          Ready to bring your story to life?
+        </h2>
+
+        <p>
+          Let's create something meaningful together.
+        </p>
+
         <Link to="/contact">
-          <button>Contact Us</button>
+          <button className="btn-accent">
+            Contact Us
+          </button>
         </Link>
+
       </section>
+
     </div>
   );
 }
